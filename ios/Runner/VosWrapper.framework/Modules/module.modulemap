@@ -1,0 +1,6 @@
+framework module VosWrapper {
+  umbrella header "VosWrapper.h"
+
+  export *
+  module * { export * }
+}
