@@ -28,8 +28,9 @@ class NETSClickPayload {
     return data;
   }
 
-  changeTLV(String tlv){
-    tlv = tlv;
+  changeTLV(String newTLV){
+    print('changing TLV to: $newTLV');
+    tlv = newTLV;
   }
   // static fromJson(Map<String, dynamic> json) {
   //   return NETSClickPayload(
