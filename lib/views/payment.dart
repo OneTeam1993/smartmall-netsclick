@@ -84,8 +84,11 @@ class MakePaymentState extends State<MakePayment> {
       } else if ((responseCode == '55' || responseCode == 'U9') &&
           ('53100${status.substring(48, status.length - 2)}').length == 105) {
         // Require PIN.
-          await doDebitWithPin(payload.amount, responseCode, '53100${status.substring(48, status.length - 2)}');
-
+        print('user require to key in pin');
+        await doDebitWithPin(payload.amount, responseCode, '53100${status.substring(48, status.length - 2)}').then((tlv) => {
+            payload.changeTLV(tlv),
+            payMerchant(payload, lastContext)
+          });
       } else {
         showSimpleDialog(title: 'Error', message:'There is some error with your NETS account!', context: lastContext);
       }

@@ -2,7 +2,7 @@ class NETSClickPayload {
   final String consumerId;
   final String orderId;
   final String merchantId;
-  final String tlv;
+  String tlv;
   final double amount;
   final int netClickId;
 
@@ -28,6 +28,9 @@ class NETSClickPayload {
     return data;
   }
 
+  changeTLV(String tlv){
+    tlv = tlv;
+  }
   // static fromJson(Map<String, dynamic> json) {
   //   return NETSClickPayload(
   //       consumerId: json['consumer_id'] as int,
