@@ -226,8 +226,8 @@ import Flutter
         
         let pks = PublicKeySet(mapPubKey, withHppPublicComponents: dic)
         
-        let serverName:String = "netspayserver.der"
-        
+        let serverName:String = "netspayserver"
+
         DispatchQueue.global().async() {
             do {
                 try ExceptionCatcher.catchException {
