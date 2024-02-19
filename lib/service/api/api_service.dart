@@ -21,9 +21,9 @@ class BeveatAPIService {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['tlv'] = tlv;
     data['org_id'] = orgId;
-    print('=====registerTokenNetsClick=====\n/common/payments/nets-click/token/register\n$data');
+    print('=====registerTokenNetsClick=====\n/common/partner-merchants/payments/nets-click/register\n$data');
 
-    var response = await Api().dio.post('/common/payments/nets-click/token/register', data: data);
+    var response = await Api().dio.post('/common/partner-merchants/payments/nets-click/register', data: data);
     print('response: $response');
 
     Map responseBody = response.data;
